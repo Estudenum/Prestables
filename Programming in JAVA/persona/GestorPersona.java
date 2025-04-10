@@ -16,12 +16,25 @@ public class GestorPersona {
         }
     }
 
-    public void modificarPersona(String nombre, String nuevoApellido) {
+ /*    public void modificarPersona(String nombre, String nuevoApellido) {
         for (Persona p : personas) {
             if (p.nombre.equals(nombre)) {
                 p.apellido = nuevoApellido;
                 break;
             }
         }
+    }*/
+
+    public void modificarPersona(String nombre, String nuevoApellido) {
+        for (Persona p : personas) {
+            if (p.nombre.equalsIgnoreCase(nombre)) {
+                p.apellido = nuevoApellido;
+                System.out.println("Apellido modificado con éxito.");
+                return;
+            }
+        }
+        System.out.println("Persona no encontrada.");
     }
+    
+    
 }

@@ -16,14 +16,26 @@ public class GestorPrestable {
         }
     }
 
-    public void modificarDisponibilidad(String descripcion, boolean disponible) {
+/*     public void modificarDisponibilidad(String descripcion, boolean disponible) {
         for (Prestable p : items) {
             if (p.getDescripcion().contains(descripcion)) {
                 p.setDisponible(disponible);
                 break;
             }
         }
+    }*/
+
+    public void modificarDisponibilidad(String descripcion, boolean disponible) {
+        for (Prestable p : items) {
+            if (p.getDescripcion().toLowerCase().contains(descripcion.toLowerCase())) {
+                p.setDisponible(disponible);
+                System.out.println("Disponibilidad modificada con éxito.");
+                return;
+            }
+        }
+        System.out.println("Elemento no encontrado.");
     }
+    
 
     public void verDisponibles() {
         for (Prestable p : items) {
@@ -32,4 +44,6 @@ public class GestorPrestable {
             }
         }
     }
+
+    
 }
